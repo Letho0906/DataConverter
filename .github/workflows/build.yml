@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -23,7 +23,7 @@ jobs:
       - name: Build exe
         run: pyinstaller --onefile converter.py
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: converter-exe
           path: dist/converter.exe
